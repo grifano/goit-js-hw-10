@@ -2,9 +2,9 @@
 
 # Java Script
 
-## Module 9: Modules, Vite
+## Module 10: Asynchronous JavaScript, promises
 
-### Homework 9
+### Homework 10
 
 ---
 
