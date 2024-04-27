@@ -11,8 +11,11 @@
     />
     
     <title>Homework 9</title>
-    <script type="module" crossorigin src="/goit-js-hw-10/assets/modulepreload-polyfill-3cfb730f.js"></script>
-    <link rel="stylesheet" href="/goit-js-hw-10/assets/styles-d3ad7a93.css">
+    <script type="module" crossorigin src="/goit-js-hw-10/commonHelpers2.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/modulepreload-polyfill-3cfb730f.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/vendor-77e16229.js">
+    <link rel="stylesheet" href="/goit-js-hw-10/assets/vendor-7a007824.css">
+    <link rel="stylesheet" href="/goit-js-hw-10/assets/styles-34c686e4.css">
   </head>
   <body>
     <header class="task-header">
@@ -37,11 +40,9 @@
           ></a>
         </li>
         <li class="task-menu-item">
-          <a class="task-menu-link is-current" href="./1-timer.html"
-            >Task 1: Timer</a
-          >
+          <a class="task-menu-link" href="./1-timer.html">Task 1: Timer</a>
         </li>
-        <li class="task-menu-item">
+        <li class="task-menu-item is-current">
           <a class="task-menu-link" href="./2-snackbar.html"
             >Task 2: Snackbar</a
           >
@@ -61,10 +62,9 @@
       </a>
     </header>
     <main>
-      <section>
-        <div class="container">
+      <section class="shackbar">
+        <div class="container is-snackbar">
           <h2>Task 2: Snackbar</h2>
-
           <form class="form">
             <label>
               Delay (ms)
