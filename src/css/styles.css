@@ -5,18 +5,18 @@
   |============================
 */
 @import url('./reset.css');
+@import url('./fonts.css');
 @import url('./1-timer.css');
 @import url('./2-snackbar.css');
 @import url('./footer.css');
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5;
   font-weight: 400;
-
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+  letter-spacing: 0.04em;
+  color: #2e2f42;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -27,9 +27,18 @@
 * {
   box-sizing: border-box;
 }
-
+input {
+  outline: none;
+}
+button {
+  font-family: inherit;
+  border: none;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  outline: none;
+}
 body {
-  font-family: Arial, Helvetica, sans-serif;
   background-color: #fff;
   min-height: 100vh;
   display: flex;
@@ -96,8 +105,6 @@ h4 {
   gap: 16px;
   margin: 48px 0;
 }
-.home-menu-item {
-}
 .home-menu-link {
   font-size: 28px;
   text-decoration: underline;
@@ -127,9 +134,6 @@ h4 {
   padding: 12px 24px 12px 12px;
   gap: 16px;
   flex-wrap: wrap;
-  /* position: fixed;
-  top: 16px;
-  left: 0; */
   background-color: #2f4858;
   border-radius: 0px 8px 8px 0;
 }
@@ -160,4 +164,45 @@ h4 {
   .task-menu {
     border-radius: 8px;
   }
+}
+
+/*** Global Homework Styles ***/
+input {
+  border-radius: 4px;
+  width: 100%;
+  max-width: 272px;
+  height: 40px;
+  margin-right: 8px;
+  border: 1px solid #808080;
+  padding: 16px 8px;
+  transition: border 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+input:hover {
+  border: 1px solid #000;
+}
+input:focus {
+  border: 1px solid #4e75ff;
+}
+input.is-disable {
+  border: 1px solid #808080;
+  background-color: #fafafa;
+  color: #808080;
+}
+button {
+  border-radius: 8px;
+  padding: 8px 16px;
+  min-width: 75px;
+  height: 40px;
+  color: #fff;
+  background-color: #4e75ff;
+  transition: background 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+button:hover,
+button:focus {
+  color: #fff;
+  background-color: #6c8cff;
+}
+button.is-disable {
+  color: #989898;
+  background-color: #cfcfcf;
 }

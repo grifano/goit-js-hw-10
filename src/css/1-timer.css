@@ -1,36 +1,56 @@
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.gallery-image {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-.gallery-list {
-  max-width: 1128px;
-  margin: 0 auto;
+.datetime-picker-wrap {
   display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
+  justify-content: center;
 }
-@media screen and (min-width: 375px) {
-  .gallery-item {
-    flex-basis: calc((100% - 48px) / 3);
+.timer {
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 32px rgba(47, 72, 88, 0.08);
+}
+@media screen and (min-width: 500px) {
+  .timer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.value {
+  font-size: 40px;
+  line-height: 1.2;
+}
+.error-notification {
+  border-radius: 8px;
+  overflow: hidden;
+  display: inline-flex !important;
+  align-items: center;
+  padding: 10px !important;
+  margin: 8px 8px 0px 8px;
+  width: auto;
+}
+@media screen and (min-width: 768px) {
+  .error-notification {
+    overflow: hidden;
+    padding: 20px !important;
+    font-size: 16px !important;
+  }
+  .error-notification strong,
+  p {
+    font-size: inherit !important;
   }
 }
 
-.simple-lightbox {
-  color: #fff;
-}
-.sl-close,
-.sl-prev,
-.sl-next,
-.sl-counter {
-  color: #fff !important;
-}
-.sl-overlay {
-  background-color: hsla(237, 18%, 22%, 0.8) !important;
+.iziToast-close {
+  min-width: 16px !important;
+  height: 16px !important;
+  background: url('../img/bi_x-lg.svg') no-repeat 50% 50% !important;
+  position: relative !important;
 }
