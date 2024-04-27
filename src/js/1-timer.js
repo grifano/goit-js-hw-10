@@ -6,8 +6,10 @@ import 'izitoast/dist/css/iziToast.min.css';
 const refs = {
   buttonStart: document.querySelector('button[data-start]'),
   timer: document.querySelector('.timer'),
+  datePicker: document.querySelector('#datetime-picker'),
   userSelectedDate: undefined,
 };
+let intervalID;
 
 // Flatpicker: Create a callendar and update UI
 const options = {
@@ -42,12 +44,19 @@ const options = {
     updateTimerUI();
   },
 };
-flatpickr('#datetime-picker', options);
+flatpickr(refs.datePicker, options);
 
 // Function: Run timer within 1sek interval
 function runTimer() {
-  refs.buttonStart.classList.toggle('is-disable');
-  setInterval(() => {
+  refs.buttonStart.classList.add('is-disable');
+  refs.datePicker.disabled = true;
+
+  // Check if there is already an interval running
+  if (intervalID) {
+    clearInterval(intervalID);
+  }
+
+  intervalID = setInterval(() => {
     const convertedData = convertMs(refs.userSelectedDate - Date.now());
     if (
       convertedData.days < 0 &&
