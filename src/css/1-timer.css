@@ -2,6 +2,10 @@
   display: flex;
   justify-content: center;
 }
+.datetime-picker-wrap input {
+  margin-right: 8px;
+  max-width: 272px;
+}
 .timer {
   margin-top: 24px;
   margin-left: auto;
@@ -26,31 +30,4 @@
 .value {
   font-size: 40px;
   line-height: 1.2;
-}
-.error-notification {
-  border-radius: 8px;
-  overflow: hidden;
-  display: inline-flex !important;
-  align-items: center;
-  padding: 10px !important;
-  margin: 8px 8px 0px 8px;
-  width: auto;
-}
-@media screen and (min-width: 768px) {
-  .error-notification {
-    overflow: hidden;
-    padding: 20px !important;
-    font-size: 16px !important;
-  }
-  .error-notification strong,
-  p {
-    font-size: inherit !important;
-  }
-}
-
-.iziToast-close {
-  min-width: 16px !important;
-  height: 16px !important;
-  background: url('../img/bi_x-lg.svg') no-repeat 50% 50% !important;
-  position: relative !important;
 }

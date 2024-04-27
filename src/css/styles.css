@@ -51,6 +51,7 @@ header {
   display: flex;
   justify-content: center;
 }
+
 main {
   flex: 1;
   display: flex;
@@ -58,15 +59,18 @@ main {
   align-items: center;
   justify-content: center;
 }
-.hero-js-icon {
-  margin-bottom: 20px;
-}
 section {
+  width: 100%;
   padding-top: 40px;
   padding-bottom: 40px;
 }
 .container {
-  padding: 0 20px;
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 393px;
+}
+.hero-js-icon {
+  margin-bottom: 20px;
 }
 h1 {
   font-size: 3rem;
@@ -170,9 +174,7 @@ h4 {
 input {
   border-radius: 4px;
   width: 100%;
-  max-width: 272px;
   height: 40px;
-  margin-right: 8px;
   border: 1px solid #808080;
   padding: 16px 8px;
   transition: border 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -205,4 +207,33 @@ button:focus {
 button.is-disable {
   color: #989898;
   background-color: #cfcfcf;
+}
+
+/*** iziToast Custom styles ***/
+.error-notification {
+  border-radius: 8px;
+  overflow: hidden;
+  display: inline-flex !important;
+  align-items: center;
+  padding: 10px !important;
+  margin: 8px 8px 0px 8px;
+  width: auto;
+}
+@media screen and (min-width: 768px) {
+  .error-notification {
+    overflow: hidden;
+    padding: 20px !important;
+    font-size: 16px !important;
+  }
+  .error-notification strong,
+  p {
+    font-size: inherit !important;
+  }
+}
+
+.iziToast-close {
+  min-width: 16px !important;
+  height: 16px !important;
+  background: url('../img/bi_x-lg.svg') no-repeat 50% 50% !important;
+  position: relative !important;
 }
