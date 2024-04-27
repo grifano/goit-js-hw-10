@@ -12,7 +12,7 @@
     
     <title>Homework 9</title>
     <script type="module" crossorigin src="/goit-js-hw-10/assets/modulepreload-polyfill-3cfb730f.js"></script>
-    <link rel="stylesheet" href="/goit-js-hw-10/assets/styles-b0617e05.css">
+    <link rel="stylesheet" href="/goit-js-hw-10/assets/styles-d3ad7a93.css">
   </head>
   <body>
     <header class="task-header">
@@ -64,6 +64,27 @@
       <section>
         <div class="container">
           <h2>Task 2: Snackbar</h2>
+
+          <form class="form">
+            <label>
+              Delay (ms)
+              <input type="number" name="delay" required />
+            </label>
+
+            <fieldset>
+              <legend>State</legend>
+              <label>
+                <input type="radio" name="state" value="fulfilled" required />
+                Fulfilled
+              </label>
+              <label>
+                <input type="radio" name="state" value="rejected" required />
+                Rejected
+              </label>
+            </fieldset>
+
+            <button type="submit">Create notification</button>
+          </form>
         </div>
       </section>
     </main>

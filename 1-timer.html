@@ -11,8 +11,11 @@
     />
     
     <title>Homework 9</title>
-    <script type="module" crossorigin src="/goit-js-hw-10/assets/modulepreload-polyfill-3cfb730f.js"></script>
-    <link rel="stylesheet" href="/goit-js-hw-10/assets/styles-b0617e05.css">
+    <script type="module" crossorigin src="/goit-js-hw-10/commonHelpers.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/modulepreload-polyfill-3cfb730f.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/vendor-77e16229.js">
+    <link rel="stylesheet" href="/goit-js-hw-10/assets/vendor-7a007824.css">
+    <link rel="stylesheet" href="/goit-js-hw-10/assets/styles-d3ad7a93.css">
   </head>
   <body>
     <header class="task-header">
@@ -64,10 +67,15 @@
       <section class="gallery">
         <div class="container">
           <h2>Task 1: Timer</h2>
-
-          <input type="text" id="datetime-picker" />
-          <button type="button" data-start>Start</button>
-
+          <!-- ! If you get issue with submitting homework unwrap datetime-picker from div datetime-picker-wrap -->
+          <div class="datetime-picker-wrap">
+            <input
+              type="text"
+              id="datetime-picker"
+              placeholder="YYYY-MM-DD HH:MM"
+            />
+            <button class="is-disable" type="button" data-start>Start</button>
+          </div>
           <div class="timer">
             <div class="field">
               <span class="value" data-days>00</span>
