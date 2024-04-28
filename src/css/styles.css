@@ -234,6 +234,6 @@ button.is-disable {
 .iziToast-close {
   min-width: 16px !important;
   height: 16px !important;
-  background: url('../img/bi_x-lg.svg') no-repeat 50% 50% !important;
+  background: url('/img/bi_x-lg.svg') no-repeat 50% 50% !important;
   position: relative !important;
 }

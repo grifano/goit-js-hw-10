@@ -26,7 +26,7 @@ const options = {
         class: 'error-notification',
         title: 'Error',
         timeout: 5000,
-        iconUrl: '../img/bi_x-octagon.svg',
+        iconUrl: './img/bi_x-octagon.svg',
         titleColor: '#fff',
         message: 'Please choose a date in the future',
         position: 'topRight',
@@ -37,11 +37,11 @@ const options = {
       });
     } else {
       // Remove class is-disable from button and save picked date from user
-      refs.buttonStart.classList.toggle('is-disable');
+      refs.buttonStart.classList.remove('is-disable');
       refs.userSelectedDate = selectedByUserToNumber;
+      // Update UI with selected date
+      updateTimerUI();
     }
-    // Update UI with selected date
-    updateTimerUI();
   },
 };
 flatpickr(refs.datePicker, options);
@@ -64,6 +64,8 @@ function runTimer() {
       convertedData.minutes < 0 &&
       convertedData.seconds < 0
     ) {
+      refs.buttonStart.classList.remove('is-disable');
+      refs.datePicker.disabled = false;
       return;
     }
 
