@@ -26,7 +26,7 @@ const options = {
         class: 'error-notification',
         title: 'Error',
         timeout: 5000,
-        iconUrl: './img/bi_x-octagon.svg',
+        iconUrl: '/img/bi_x-octagon.svg',
         titleColor: '#fff',
         message: 'Please choose a date in the future',
         position: 'topRight',
