@@ -4,7 +4,9 @@ import 'izitoast/dist/css/iziToast.min.css';
 const refs = {
   form: document.querySelector('.form'),
   inputDelay: document.querySelector('input[name=delay]'),
+  inputDelayValue: 0,
   inputsState: document.querySelectorAll('input[name=state]'),
+  stateValue: undefined,
 };
 iziToast.settings({
   timeout: 5000,
@@ -17,35 +19,46 @@ iziToast.settings({
 
 refs.form.addEventListener('submit', onSubmit);
 
+// Save delay to global variable
+refs.inputDelay.addEventListener('change', event => {
+  refs.inputDelayValue = event.target.value;
+});
+// Save state to global variable
+refs.inputsState.forEach(input => {
+  input.addEventListener('change', event => {
+    if (event.target.checked) {
+      refs.stateValue = event.target.value;
+    }
+  });
+});
+
 // Functions
 function onSubmit(event) {
   event.preventDefault();
 
   const promise = new Promise((resolve, reject) => {
-    const delay = refs.inputDelay.value;
-    let stateValue;
-    refs.inputsState.forEach(input => {
-      if (input.checked) {
-        stateValue = input.value;
-      }
-    });
-
     // Get value from checked input
     setTimeout(() => {
-      if (stateValue === 'fulfilled') {
-        resolve({ delay, status: 'fulfilled' });
-      } else if (stateValue === 'rejected') {
-        reject({ delay, status: 'rejected' });
+      if (refs.stateValue === 'fulfilled') {
+        resolve({ delay: refs.inputDelayValue, status: 'fulfilled' });
+      } else if (refs.stateValue === 'rejected') {
+        reject({ delay: refs.inputDelayValue, status: 'rejected' });
       } else {
         return;
       }
-    }, delay);
+    }, refs.inputDelayValue);
   });
 
   promise
-    .then(value => showNotification(value))
+    .then(value => {
+      showNotification(value);
+      // Clean form
+      refs.form.reset();
+    })
     .catch(value => {
       showNotification(value);
+      // Clean form
+      refs.form.reset();
     });
 }
 
